@@ -16,7 +16,7 @@ const {db_password}=process.env;
 const encodedPassword = encodeURIComponent(db_password);
 
 const connectionString = `mongodb+srv://rahul2483yadav:${encodedPassword}@cluster0.3q3qi.mongodb.net/converse?retryWrites=true&w=majority&appName=Cluster0`;
-mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(connectionString)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("MongoDB connection error:", err));
 

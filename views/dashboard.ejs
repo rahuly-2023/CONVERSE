@@ -225,7 +225,7 @@
 
 
 
- <div id="deleteChatModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+ <div id="deleteChatModal" class="modal show fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -491,10 +491,14 @@
             data: {id:id},
             success:function(res){
                 if(res.success == true){                    //if success means db se delte ho gya then delte from screen too
+
+                    
+                    
+                    $('#deleteChatModal').modal('hide'); // Close the modal here
+                 
+                    
                     $('#'+id).remove();                     //har msg ke paas apni id hai, thus us id ki help se wo msg remove kr diya screen ki unordered-list se, BUT ye toh apni window pe hua, dusre user ki window se delete krne ke liye broadcast
-
-                    $('#deleteChatModal').modal('hide');    //pop-up window apne aap band nhi hoga, forced band krne ke liye
-
+                    
                     socket.emit('chatDeleted',id);          //dusre user ki screen se delete krne ke liye broadcast krenge
                 }
                 else{

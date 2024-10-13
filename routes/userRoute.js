@@ -22,7 +22,7 @@ const multer=require('multer');
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         console.log('Uploading');
-        cb(null, path.join(__dirname, '../public/images'));
+        cb(null, './public');
     },
     filename: (req, file, cb) => {
         const name = Date.now()+'-'+file.originalname;

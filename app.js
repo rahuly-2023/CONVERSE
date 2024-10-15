@@ -15,7 +15,7 @@ var mongoose = require('mongoose');
 const {db_password}=process.env;
 const encodedPassword = encodeURIComponent(db_password);
 
-const connectionString = `mongodb+srv://rahul2483yadav:${encodedPassword}@cluster0.3q3qi.mongodb.net/converse?retryWrites=true&w=majority&appName=Cluster0`;
+const connectionString = process.env.db_string;
 mongoose.connect(connectionString)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("MongoDB connection error:", err));

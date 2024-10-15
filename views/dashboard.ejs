@@ -95,10 +95,10 @@
                             <%//TOP%>
                             <div class="d-flex align-items-center py-1">
                                 <div class="position-relative">
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" id="top-image" class="rounded-circle mr-1" alt="Sharon Lessman" width="40" height="40">
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar3.png" id="top-image" class="rounded-circle mr-1" alt="pic" width="40" height="40">
                                 </div>
                                 <div class="flex-grow-1 pl-3">
-                                    <strong id="top-userName">Sharon Lessman</strong>
+                                    <strong id="top-userName"></strong>
                                     <%//<div class="text-muted small"><em>Typing...</em></div>%>
                                 </div>
                                 <div>
@@ -352,7 +352,7 @@
                     let html = `
                     <div class="chat-message-right pb-4" id='`+response.data._id+`'>
                         <div>
-                            <img src="`+sender_imgId+`" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
+                            <img src="`+sender_imgId+`" class="rounded-circle mr-1" alt="pic" width="40" height="40">
                         </div>
 
 
@@ -393,7 +393,7 @@
 
                 <div class="chat-message-left pb-4" id='`+data._id+`'>
                     <div>
-                        <img src="`+receiver_imgId+`" class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">
+                        <img src="`+receiver_imgId+`" class="rounded-circle mr-1" alt="pic" width="40" height="40">
                         <%// <div class="text-muted small text-nowrap mt-2">2:33 am</div>%>
                     </div>
 
@@ -427,13 +427,13 @@
             if(chats[i]['sender_id'] == sender_id){      //(sender_id is global) agar maine chats bheji hai
                 addClass = 'chat-message-right';
                 // image = sender_imgID;
-                image= `<img src='`+sender_imgId+`' class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">`;
+                image= `<img src='`+sender_imgId+`' class="rounded-circle mr-1" alt="pic" width="40" height="40">`;
                 
             }
             else{
                 addClass = 'chat-message-left';
                 // image = receiver_imgId;
-                image= `<img src='`+receiver_imgId+`' class="rounded-circle mr-1" alt="Chris Wood" width="40" height="40">`;
+                image= `<img src='`+receiver_imgId+`' class="rounded-circle mr-1" alt="pic" width="40" height="40">`;
             }
 
 

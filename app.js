@@ -15,8 +15,8 @@ var mongoose = require('mongoose');
 const {db_password}=process.env;
 const encodedPassword = encodeURIComponent(db_password);
 
-const connectionString = process.env.db_string;
-mongoose.connect(connectionString)
+// const connectionString = process.env.db_string;
+mongoose.connect(process.env.db_string)
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("MongoDB connection error:", err));
 

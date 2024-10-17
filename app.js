@@ -12,14 +12,16 @@ app.get('/favicon.ico', (req, res) => {
 require('dotenv').config();
 
 var mongoose = require('mongoose');
-const {db_password}=process.env;
-const encodedPassword = encodeURIComponent(db_password);
 
-mongoose.connect(`mongodb+srv://rahul2483yadav:${encodedPassword}@cluster0.3q3qi.mongodb.net/converse?retryWrites=true&w=majority&appName=Cluster0`)
-  .then(() => console.log("Connected to MongoDB"))
-  .catch(err => console.error("MongoDB connection error:", err));
+const { DB_USERNAME, DB_PASSWORD, DB_CLUSTER, DB_NAME } = process.env;
 
+const encodedPassword = encodeURIComponent(DB_PASSWORD);
 
+const MONGODB_URI = `mongodb+srv://${DB_USERNAME}:${encodedPassword}@${DB_CLUSTER}.mongodb.net/${DB_NAME}?retryWrites=true&w=majority&appName=Cluster0`;
+
+mongoose.connect(MONGODB_URI)
+.then(() => console.log("Connected to MongoDB"))
+.catch(err => console.error("MongoDB connection error:", err));
   
 const http=require('http').Server(app);
 
